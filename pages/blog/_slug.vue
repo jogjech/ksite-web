@@ -1,16 +1,27 @@
 <template>
-  <article>
-    <h1>{{ article.title }}</h1>
-    <p>{{ article.description }}</p>
-    <img :src="article.img" :alt="article.alt" />
-    <p>Article last updated: {{ formatDate(article.updatedAt) }}</p>
+  <div>
+    <NavBar active-route="/blog" />
+    <article class="container m-auto pt-8 px-4">
+      <div class="pb-8">
+        <p class="text-4xl">{{ article.title }}</p>
+        <!-- <p>{{ article.description }}</p> -->
+        <p class="text-gray-600 italic">
+          Article last updated: {{ formatDate(article.updatedAt) }}
+        </p>
+      </div>
 
-    <nuxt-content :document="article" class="prose" />
-  </article>
+      <nuxt-content :document="article" class="prose" />
+    </article>
+  </div>
 </template>
 
 <script>
+import NavBar from '../../components/common/NavBar'
+
 export default {
+  components: {
+    NavBar,
+  },
   async asyncData({ $content, params }) {
     const article = await $content('articles', params.slug).fetch()
 
