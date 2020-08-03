@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavBar active-route="/blog" />
+    <nav-bar active-route="/blog" />
     <div class="container m-auto pt-8 px-4">
       <p class="text-3xl font-normal py-4">Ksite Blog</p>
       <p class="text-lg font-light py-1">

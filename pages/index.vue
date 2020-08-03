@@ -6,8 +6,8 @@
       <p class="text-lg font-light py-1">
         Hello! This is Kevin Wang's playground. I am a full-time software
         developer. I am passionate of building
-        <n-link to="https://vuejs.org/" class="">Vue.js</n-link> and
-        <n-link to="https://nodejs.org/en/">Node.js</n-link> apps.
+        <a href="https://vuejs.org" target="_blank">Vue.js</a> and
+        <a href="https://nodejs.org/en" target="_blank">Node.js</a> apps.
       </p>
       <p class="text-lg font-light py-1">
         This site is powered by Nuxt.js, Express.js, MongoDB, and hosted on
