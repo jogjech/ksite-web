@@ -24,7 +24,9 @@ const bowser = require('bowser')
 export default {
   name: 'Conan',
   async asyncData({ $axios }) {
-    const { data } = await $axios.get(`/api/episodes/conan/`)
+    const { data } = await $axios.get(
+      `${process.env.API_URL}/api/episodes/conan/`
+    )
     return { watchHistory: data.history }
   },
   data() {
@@ -37,7 +39,11 @@ export default {
   mounted() {
     const { browser } = bowser.parse(window.navigator.userAgent)
     console.log(browser)
-    if (browser.name === 'Chrome' || browser.name === 'Safari') {
+    if (
+      browser.name === 'Chrome' ||
+      browser.name === 'Safari' ||
+      browser.name === 'Firefox'
+    ) {
       this.classicBrowser = false
     }
   },
@@ -45,7 +51,7 @@ export default {
     async submit() {
       if (this.episodeId) {
         const response = await axios.get(
-          `/api/episodes/conan/${this.episodeId}`
+          `${process.env.API_URL}/api/episodes/conan/${this.episodeId}`
         )
         window.location.href = this.classicBrowser
           ? response.data.classicUrl

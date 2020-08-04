@@ -50,6 +50,7 @@ export default {
     '@nuxtjs/tailwindcss',
     // Doc: https://github.com/nuxt-community/google-fonts-module
     '@nuxtjs/google-fonts',
+    '@nuxtjs/dotenv',
   ],
   /*
    ** Nuxt.js modules
