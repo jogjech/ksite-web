@@ -25,6 +25,8 @@ export default {
   name: 'Conan',
   async asyncData({ $axios }) {
     const { data } = await $axios.get(`/api/episodes/conan/`)
+    console.log($axios.defaults.baseURL)
+    console.log($axios.defaults.browserBaseURL)
     return { watchHistory: data.history }
   },
   data() {
@@ -37,7 +39,11 @@ export default {
   mounted() {
     const { browser } = bowser.parse(window.navigator.userAgent)
     console.log(browser)
-    if (browser.name === 'Chrome' || browser.name === 'Safari') {
+    if (
+      browser.name === 'Chrome' ||
+      browser.name === 'Safari' ||
+      browser.name === 'Firefox'
+    ) {
       this.classicBrowser = false
     }
   },

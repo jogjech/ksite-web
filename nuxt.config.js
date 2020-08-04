@@ -65,7 +65,13 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    proxy: true,
+    prefix: '/api/',
+  },
+  proxy: {
+    '/api/': { target: process.env.API_URL, pathRewrite: { '^/api/': '' } },
+  },
   /*
    ** Content module configuration
    ** See https://content.nuxtjs.org/configuration
@@ -77,8 +83,4 @@ export default {
    */
   build: {},
   serverMiddleware: ['~/server/index.js'],
-  server: {
-    port: 9000, // default: 3000
-    host: '0.0.0.0', // default: localhost
-  },
 }
