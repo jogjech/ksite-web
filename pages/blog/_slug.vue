@@ -10,7 +10,7 @@
         </p>
       </div>
 
-      <nuxt-content :document="article" class="prose" />
+      <nuxt-content :document="article" class="prose max-w-full pb-12" />
     </article>
   </div>
 </template>

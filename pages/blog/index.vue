@@ -10,6 +10,11 @@
         <li class="list-disc">
           <nuxt-link to="/blog/1-nuxt-setup">Nuxt.js 配置</nuxt-link>
         </li>
+        <li class="list-disc">
+          <nuxt-link to="/blog/2-nuxt-axios">
+            在 Nuxt.js 使用 axios 的坑
+          </nuxt-link>
+        </li>
       </ul>
     </div>
   </div>
@@ -17,6 +22,7 @@
 
 <script>
 import NavBar from '../../components/common/NavBar'
+
 export default {
   components: {
     NavBar,
