@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavBar active-route="/blog" />
+    <nav-bar />
     <article class="container m-auto pt-8 px-4">
       <div class="pb-8">
         <p class="text-4xl">{{ article.title }}</p>

@@ -1,9 +1,9 @@
 <template>
   <a
     :class="
-      active
-        ? 'no-underline text-teal-dark border-b-2 border-teal-dark uppercase tracking-wide font-bold text-md py-3 mr-8'
-        : 'no-underline text-grey-dark border-b-2 border-transparent uppercase tracking-wide font-bold text-md py-3 mr-8'
+      currentSuperPath === href
+        ? 'no-underline text-teal-500 border-b-2 border-teal-500 uppercase tracking-wide font-bold text-md py-3 mr-8'
+        : 'no-underline text-gray-800 border-b-2 border-transparent uppercase tracking-wide font-bold text-md py-3 mr-8'
     "
     :href="href"
   >
@@ -15,7 +15,6 @@
 export default {
   name: 'NavBarItem',
   props: {
-    active: Boolean,
     href: {
       type: String,
       default: '#',
@@ -23,6 +22,11 @@ export default {
     text: {
       type: String,
       default: '#',
+    },
+  },
+  computed: {
+    currentSuperPath() {
+      return `/${this.$route.path.split('/')[1]}`
     },
   },
 }

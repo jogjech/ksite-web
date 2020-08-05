@@ -1,8 +1,8 @@
 <template>
   <div>
-    <nav-bar active-route="/labs" />
-    <div class="container m-auto pt-8 px-4">
-      <p class="text-3xl font-normal py-4">Labs</p>
+    <nav-bar />
+    <div class="container m-auto pt-8 px-4 max-w-screen-lg">
+      <!-- <p class="text-3xl font-normal py-4">Labs</p> -->
       <div
         class="max-w-sm rounded-md overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer"
         @click="$router.push('/labs/conan')"

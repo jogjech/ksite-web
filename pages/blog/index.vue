@@ -1,7 +1,7 @@
 <template>
   <div>
-    <nav-bar active-route="/blog" />
-    <div class="container m-auto pt-8 px-4">
+    <nav-bar />
+    <div class="container m-auto pt-8 px-4 max-w-screen-lg">
       <p class="text-3xl font-normal py-4">Ksite Blog</p>
       <p class="text-lg font-light py-1">
         随便逛逛吧

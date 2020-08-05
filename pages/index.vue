@@ -1,7 +1,7 @@
 <template>
   <div>
-    <NavBar active-route="/" />
-    <div class="container m-auto pt-8 px-4">
+    <nav-bar />
+    <div class="container m-auto pt-8 px-4 max-w-screen-lg">
       <p class="text-3xl font-normal py-4">Ksite</p>
       <p class="text-lg font-light py-1">
         Hello! This is Kevin Wang's playground. I am a full-time software

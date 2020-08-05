@@ -2,22 +2,10 @@
   <div>
     <nav class="bg-white px-8 pt-2 shadow-md">
       <div class="-mb-px flex justify-center">
-        <NavBarItem :active="activeRoute === '/'" href="/" text="Home" />
-        <NavBarItem
-          :active="activeRoute === '/blog'"
-          href="/blog"
-          text="Blog"
-        />
-        <NavBarItem
-          :active="activeRoute === '/labs'"
-          href="/labs"
-          text="Labs"
-        />
-        <NavBarItem
-          :active="activeRoute === '/about'"
-          href="/about"
-          text="About"
-        />
+        <NavBarItem href="/" text="Home" />
+        <NavBarItem href="/blog" text="Blog" />
+        <NavBarItem href="/labs" text="Labs" />
+        <NavBarItem href="/about" text="About" />
       </div>
     </nav>
   </div>
@@ -29,12 +17,6 @@ export default {
   name: 'NavBar',
   components: {
     NavBarItem,
-  },
-  props: {
-    activeRoute: {
-      type: String,
-      default: '#',
-    },
   },
 }
 </script>
