@@ -50,7 +50,6 @@ export default {
     '@nuxtjs/tailwindcss',
     // Doc: https://github.com/nuxt-community/google-fonts-module
     '@nuxtjs/google-fonts',
-    '@nuxtjs/dotenv',
   ],
   /*
    ** Nuxt.js modules
@@ -82,4 +81,8 @@ export default {
     port: 3000, // default: 3000
     host: '0.0.0.0', // default: localhost
   },
+  publicRuntimeConfig: {
+    apiURL: process.env.API_URL || 'http://localhost:3000',
+  },
+  privateRuntimeConfig: {},
 }

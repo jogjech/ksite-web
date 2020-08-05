@@ -23,10 +23,8 @@ const bowser = require('bowser')
 
 export default {
   name: 'Conan',
-  async asyncData({ $axios }) {
-    const { data } = await $axios.get(
-      `${process.env.API_URL}/api/episodes/conan/`
-    )
+  async asyncData({ $axios, $config }) {
+    const { data } = await $axios.get(`${$config.apiURL}/api/episodes/conan/`)
     return { watchHistory: data.history }
   },
   data() {
@@ -51,7 +49,7 @@ export default {
     async submit() {
       if (this.episodeId) {
         const response = await axios.get(
-          `${process.env.API_URL}/api/episodes/conan/${this.episodeId}`
+          `${this.$config.apiURL}/api/episodes/conan/${this.episodeId}`
         )
         window.location.href = this.classicBrowser
           ? response.data.classicUrl
