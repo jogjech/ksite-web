@@ -43,7 +43,14 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: [
+    // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxtjs/eslint-module',
+    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
+    '@nuxtjs/tailwindcss',
+    // Doc: https://github.com/nuxt-community/google-fonts-module
+    '@nuxtjs/google-fonts',
+  ],
   /*
    ** Nuxt.js modules
    */
@@ -53,10 +60,7 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/google-fonts',
   ],
-  devModules: ['@nuxtjs/eslint-module'],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
