@@ -43,10 +43,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [
-    // Doc: https://github.com/nuxt-community/google-fonts-module
-    '@nuxtjs/google-fonts',
-  ],
+  buildModules: [],
   /*
    ** Nuxt.js modules
    */
@@ -57,6 +54,7 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts',
   ],
   devModules: ['@nuxtjs/eslint-module'],
   /*
