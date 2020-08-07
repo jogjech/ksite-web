@@ -8,12 +8,13 @@
   </div>
 </template>
 
-<script>
-import NavBar from '../../components/common/NavBar'
+<script lang="ts">
+import Vue from 'vue'
+import NavBar from '@/components/common/NavBar.vue'
 
-export default {
+export default Vue.extend({
   components: {
     NavBar,
   },
-}
+})
 </script>

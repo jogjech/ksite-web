@@ -17,11 +17,13 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
+
 const axios = require('axios')
 const bowser = require('bowser')
 
-export default {
+export default Vue.extend({
   name: 'Conan',
   async asyncData({ $axios, $config }) {
     const { data } = await $axios.get(`${$config.apiURL}/api/episodes/conan/`)
@@ -37,10 +39,11 @@ export default {
   mounted() {
     const { browser } = bowser.parse(window.navigator.userAgent)
     console.log(browser)
+    const broswerName: string = browser.name
     if (
-      browser.name === 'Chrome' ||
-      browser.name === 'Safari' ||
-      browser.name === 'Firefox'
+      broswerName === 'Chrome' ||
+      broswerName === 'Safari' ||
+      broswerName === 'Firefox'
     ) {
       this.classicBrowser = false
     }
@@ -62,7 +65,7 @@ export default {
       }
     },
   },
-}
+})
 </script>
 
 <style scoped>
