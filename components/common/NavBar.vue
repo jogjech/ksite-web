@@ -12,11 +12,7 @@
 </template>
 
 <script>
-import NavBarItem from './NavBarItem'
 export default {
   name: 'NavBar',
-  components: {
-    NavBarItem,
-  },
 }
 </script>

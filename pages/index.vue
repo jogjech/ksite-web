@@ -4,26 +4,21 @@
     <div class="container m-auto pt-8 px-4 max-w-screen-lg">
       <p class="text-3xl font-normal py-4">Ksite</p>
       <p class="text-lg font-light py-1">
-        Hello! This is Kevin Wang's playground. I am a full-time software
+        Hello! This is Kevin Wang's playground. I am a full-stack software
         developer. I am passionate of building
         <a href="https://vuejs.org" target="_blank">Vue.js</a> and
         <a href="https://nodejs.org/en" target="_blank">Node.js</a> apps.
       </p>
       <p class="text-lg font-light py-1">
-        This site is powered by Nuxt.js, Express.js, MongoDB, and hosted on
-        Vultr VPS.
+        This site is written in TypeScript, powered by Nuxt.js, Express.js,
+        MongoDB, and hosted on Vultr VPS.
       </p>
     </div>
   </div>
 </template>
 
 <script>
-import NavBar from '../components/common/NavBar'
-export default {
-  components: {
-    NavBar,
-  },
-}
+export default {}
 </script>
 
 <style scoped>

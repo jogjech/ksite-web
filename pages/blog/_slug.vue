@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav-bar />
-    <article class="container m-auto pt-8 px-4">
+    <article class="container m-auto py-8 px-4 max-w-screen-lg">
       <div class="pb-8">
         <p class="text-4xl">{{ article.title }}</p>
         <!-- <p>{{ article.description }}</p> -->
@@ -10,23 +10,30 @@
         </p>
       </div>
 
-      <nuxt-content :document="article" class="prose max-w-full pb-12" />
+      <nuxt-content :document="article" class="prose max-w-full pb-8" />
+      <prev-next :prev="prev" :next="next" />
     </article>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import NavBar from '@/components/common/NavBar.vue'
 
 export default Vue.extend({
-  components: {
-    NavBar,
-  },
   async asyncData({ $content, params }) {
     const article = await $content('articles', params.slug).fetch()
 
-    return { article }
+    const [prev, next] = await $content('articles')
+      .only(['title', 'slug'])
+      .sortBy('createdAt', 'asc')
+      .surround(params.slug)
+      .fetch()
+
+    return {
+      article,
+      prev,
+      next,
+    }
   },
   methods: {
     formatDate(date: string): string {
@@ -36,3 +43,14 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style>
+/* Anchor is having some issue to scroll to the position. Tracked in https://github.com/nuxt/nuxt.js/issues/5359 */
+.icon.icon-link {
+  background-image: url('~assets/svg/icon-hashtag.svg');
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+}
+</style>

@@ -6,7 +6,7 @@ description: '在 Nuxt.js 使用 axios 的坑'
 ## Nuxt Axios 模块
 在 `create-nuxt-app` 中可以选择使用[axios模块](https://axios.nuxtjs.org/)，并且也是Nuxt官方推荐的模块。Axios 的使用方法很简单。下面我们来发一个简单的 `GET` request：
 
-```
+```javascript
 const axios = require('axios')
 
 axios.get('/user?ID=12345')
@@ -22,7 +22,7 @@ axios.get('/user?ID=12345')
 
 当我使用如下的代码时，
 
-```
+```javascript
 const axios = require('axios')
 
 // In Vue object
@@ -34,7 +34,7 @@ async asyncData() {
 会遇到错误 `connect ECONNREFUSED 127.0.0.1:80`。Axios 会试图链接到localhost 80 port。
 
 而当我指定了 hostname 和 port 后，就可以正常运行了：
-```
+```javascript
 axios.get(`localhost:9000/api/episodes/conan/`)
 ```
 
@@ -43,7 +43,7 @@ axios.get(`localhost:9000/api/episodes/conan/`)
 
 我在 `nuxt.config.js` 配置了 baseURL:
 
-```
+```javascript
 export default {
   modules: [
     '@nuxtjs/axios'
@@ -61,7 +61,7 @@ export default {
 
 然后我发现正确的在 `asyncData` 使用 axios 应该是如下写法：
 
-```
+```javascript
 const axios = require('axios')
 
 // In Vue object
