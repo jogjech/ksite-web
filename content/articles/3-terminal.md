@@ -40,7 +40,7 @@ description: '用Tailwind CSS写（抄）一个可以在博客中使用的Termin
 
 因为我的blog是用的 [Nuxt content](https://content.nuxtjs.org/)，如果想在 `.md` 文件中加入 Vue component，必须将 component 放在 `/components/global` 文件夹中，注册成 global 的组件。所以我们要做的就是将上面的代码复制到 `/components/global` 文件夹中，并命名为 `Terminal.vue`。
 
-```html
+```vue[Terminal.vue]
 <template>
   <div>
     // Same code as above
@@ -52,7 +52,7 @@ description: '用Tailwind CSS写（抄）一个可以在博客中使用的Termin
 
 由于我使用了 [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin/) 来美化 `.md` 代码，`prose` 这个 class 会给 `<p>` tag 加上 margin-top 和 margin-bottom。这会导致 terminal 中的文字向下偏移。为了解决这个问题，我在 `Terminal.vue` 中加入了 CSS 来 override margin：
 
-```css
+```vue[Terminal.vue]
 <style scoped>
 .remove-margin {
   margin: 0 !important;
@@ -66,7 +66,7 @@ description: '用Tailwind CSS写（抄）一个可以在博客中使用的Termin
 
 现在在 `.md` 中使用
 
-```html
+```md[article.md]
 <terminal></terminal>
 ```
 
@@ -76,7 +76,7 @@ description: '用Tailwind CSS写（抄）一个可以在博客中使用的Termin
 
 我想象的结果是：
 
-```html
+```md[article.md]
 <terminal>
   yarn start
 </terminal>

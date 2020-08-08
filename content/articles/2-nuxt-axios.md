@@ -43,7 +43,7 @@ axios.get(`localhost:9000/api/episodes/conan/`)
 
 我在 `nuxt.config.js` 配置了 baseURL:
 
-```javascript
+```javascript[nuxt.config.js]
 export default {
   modules: [
     '@nuxtjs/axios'
@@ -61,7 +61,7 @@ export default {
 
 然后我发现正确的在 `asyncData` 使用 axios 应该是如下写法：
 
-```javascript
+```javascript[*.vue]
 const axios = require('axios')
 
 // In Vue object

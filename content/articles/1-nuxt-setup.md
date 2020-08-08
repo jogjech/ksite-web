@@ -16,13 +16,13 @@ npx create-nuxt-app@2.15.0
 ### 方法2：配置 serverMiddleware
 更多细节可以阅读 [serverMiddleware 官方文档](https://nuxtjs.org/api/configuration-servermiddleware)。
 
-在`nuxt.config.js` 加入如下代码：
+在 `nuxt.config.js` 加入如下代码：
 
-```
+```javascript[nuxt.config.js]
 serverMiddleware: ['~/server/index.js'],
 ```
 然后创建文件 `/server/index.js`：
-```javascript
+```javascript[index.js]
 const express = require('express')
 
 const app = express()

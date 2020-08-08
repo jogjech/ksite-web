@@ -5,7 +5,20 @@
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
 module.exports = {
-  theme: {},
+  theme: {
+    typography: {
+      default: {
+        css: {
+          'code::before': {
+            content: '""',
+          },
+          'code::after': {
+            content: '""',
+          },
+        },
+      },
+    },
+  },
   variants: {},
   plugins: [require('@tailwindcss/typography')], // https://github.com/tailwindlabs/tailwindcss-typography
   purge: {
