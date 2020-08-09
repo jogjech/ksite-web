@@ -62,6 +62,16 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
   ],
+  hooks: {
+    // https://content.nuxtjs.org/advanced
+    'content:file:beforeInsert': (document) => {
+      if (document.extension === '.md') {
+        const { text } = require('reading-time')(document.text)
+
+        document.readingTime = text
+      }
+    },
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

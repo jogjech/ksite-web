@@ -1,6 +1,7 @@
 ---
 title: 用 Tailwind CSS 写（抄）一个可以在博客中使用的 Terminal
 description: '用Tailwind CSS写（抄）一个可以在博客中使用的Terminal'
+# createdAt: '2018-01-08'
 ---
 
 今天花了点时间捅咕出了一个Terminal。感谢 MagedAhmad 的[代码](https://tailwindcomponents.com/component/terminal)!

@@ -5,8 +5,8 @@
       <div class="pb-8">
         <p class="text-4xl">{{ article.title }}</p>
         <!-- <p>{{ article.description }}</p> -->
-        <p class="text-gray-600 italic">
-          Article last updated: {{ formatDate(article.updatedAt) }}
+        <p class="text-gray-600">
+          {{ formatDate(article.createdAt) }} | {{ article.readingTime }}
         </p>
       </div>
 
