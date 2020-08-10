@@ -111,7 +111,7 @@ export default Vue.extend({
     return {
       comment: '',
       postCommentResult: '',
-      comments: [],
+      comments: [] as { body: string; date: number }[],
     }
   },
   methods: {
