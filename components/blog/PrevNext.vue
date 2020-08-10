@@ -1,7 +1,7 @@
 <template>
   <div class="divide-y pt-4">
     <div></div>
-    <div class="flex justify-between pt-3">
+    <div class="flex justify-between py-3">
       <NuxtLink
         v-if="prev"
         :to="{ name: 'blog-slug', params: { slug: prev.slug } }"
@@ -15,10 +15,11 @@
         :to="{ name: 'blog-slug', params: { slug: next.slug } }"
         class="font-bold hover:underline"
       >
-        &rarr; {{ next.title }}
+        {{ next.title }} &rarr;
       </NuxtLink>
       <span v-else>&nbsp;</span>
     </div>
+    <div></div>
   </div>
 </template>
 

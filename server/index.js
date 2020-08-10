@@ -10,6 +10,7 @@ require('dotenv').config()
 const app = express()
 const visitor = require('./routes/visitor')
 const episode = require('./routes/episodes')
+const articles = require('./routes/articles.js')
 
 module.exports = { path: '/api', handler: app }
 
@@ -22,6 +23,7 @@ app.use(requestIp.mw())
 
 app.use('/episodes', episode)
 app.use('/visitors', visitor)
+app.use('/articles', articles)
 
 app.use((err, req, res, next) => {
   if (err.status) {
